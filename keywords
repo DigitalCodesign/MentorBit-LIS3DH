@@ -1,0 +1,11 @@
+MentorBitLIS3DH KEYWORD1
+begin KEYWORD2
+obtenerAceleraciones KEYWORD2
+obtenerAceleracionX KEYWORD2
+obtenerAceleracionY KEYWORD2
+obtenerAceleracionZ KEYWORD2
+obtenerPosiciones KEYWORD2
+obtenerPosicionX KEYWORD2
+obtenerPosicionY KEYWORD2
+obtenerPosicionZ KEYWORD2
+configPort KEYWORD2
