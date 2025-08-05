@@ -31,10 +31,6 @@
         obtenerAceleracionX -> Función que permite obtener la aceleración del eje X
         obtenerAceleracionY -> Función que permite obtener la aceleración del eje Y
         obtenerAceleracionZ -> Función que permite obtener la aceleración del eje Z
-        obtenerPosiciones -> Función que permite obtener los valores de rotación de los ejes
-        obtenerPosicionX -> Función que permite obtener el valor de rotación del eje X
-        obtenerPosicionY -> Función que permite obtener el valor de rotación del eje Y
-        obtenerPosicionZ -> Función que permite obtener el valor de rotación del eje Z
 
 */
 
@@ -57,10 +53,6 @@ class MentorBitLIS3DH : public MentorPort
         int obtenerAceleracionX();
         int obtenerAceleracionY();
         int obtenerAceleracionZ();
-        void obtenerPosiciones(int x_value, int y_value, int z_value);
-        int obtenerPosicionX();
-        int obtenerPosicionY();
-        int obtenerPosicionZ();
         void configPort(const Port& port) override;
 
     private:

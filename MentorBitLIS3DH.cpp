@@ -31,10 +31,6 @@
         obtenerAceleracionX -> Función que permite obtener la aceleración del eje X
         obtenerAceleracionY -> Función que permite obtener la aceleración del eje Y
         obtenerAceleracionZ -> Función que permite obtener la aceleración del eje Z
-        obtenerPosiciones -> Función que permite obtener los valores de rotación de los ejes
-        obtenerPosicionX -> Función que permite obtener el valor de rotación del eje X
-        obtenerPosicionY -> Función que permite obtener el valor de rotación del eje Y
-        obtenerPosicionZ -> Función que permite obtener el valor de rotación del eje Z
 
 */
 
@@ -93,46 +89,6 @@ int MentorBitLIS3DH::obtenerAceleracionZ(){
     int y_value;
     int z_value;
     _sensor.getAcceleration(&x_value, &y_value, &z_value);
-    return z_value;
-}
-
-/*
-    Esta función devuelve por referencia el valor de la rotacion del _sensor
-*/
-void MentorBitLIS3DH::obtenerPosiciones(int x_value, int y_value, int z_value){
-    _sensor.getRotation(&x_value, &y_value, &z_value);
-}
-
-/*
-    Esta función devuelve el valor de la rotación del eje X a la que apunta el _sensor
-*/
-int MentorBitLIS3DH::obtenerPosicionX(){
-    int x_value;
-    int y_value;
-    int z_value;
-    _sensor.getRotation(&x_value, &y_value, &z_value);
-    return x_value;
-}
-
-/*
-    Esta función devuelve el valor de la rotación del eje Y a la que apunta el _sensor
-*/
-int MentorBitLIS3DH::obtenerPosicionY(){
-    int x_value;
-    int y_value;
-    int z_value;
-    _sensor.getRotation(&x_value, &y_value, &z_value);
-    return y_value;
-}
-
-/*
-    Esta función devuelve el valor de la rotación del eje Z a la que apunta el _sensor
-*/
-int MentorBitLIS3DH::obtenerPosicionZ(){
-    int x_value;
-    int y_value;
-    int z_value;
-    _sensor.getRotation(&x_value, &y_value, &z_value);
     return z_value;
 }
 
