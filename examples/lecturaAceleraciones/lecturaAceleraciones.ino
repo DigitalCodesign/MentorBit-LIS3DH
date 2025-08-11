@@ -30,24 +30,24 @@
 #include <MentorBitLIS3DH.h>
 
 // Se define la dirección I2C del módulo acelerómetro
-#define LIS3DH_I2C_ADDR 0x68
+#define LIS3DH_I2C_ADDR 0x19
 
 MentorBitLIS3DH acelerometro; // Crear el objeto Acelerometro de la clase MentorBitLIS3DH
 
 // Se declaran las variables en las que se van a almacenar los valores de aceleraciones
-int aceleracionX = 0;
-int aceleracionY = 0;
-int aceleracionZ = 0;
+float aceleracionX = 0;
+float aceleracionY = 0;
+float aceleracionZ = 0;
 
 void setup() {
     acelerometro.begin(LIS3DH_I2C_ADDR); // inicializar el módulo 
-    Serial.begin(9600); // Inicializar el puerto serial a 9600 baudios
+    Serial.begin(115200); // Inicializar el puerto serial a 9600 baudios
     delay(1000); // Espera 1 segundos
 }
 
 void loop() {
     // Imprimir los valores de aceleración de los ejes
-    acelerometro.obtenerAceleraciones(&aceleracionX, &aceleracionY, &aceleracionZ);
+    acelerometro.obtenerAceleraciones(aceleracionX, aceleracionY, aceleracionZ);
     Serial.print("Valores de aceleración:  ");
     Serial.print(aceleracionX);
     Serial.print("  ||  ");

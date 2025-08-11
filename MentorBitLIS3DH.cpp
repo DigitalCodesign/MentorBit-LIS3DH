@@ -46,49 +46,50 @@ MentorBitLIS3DH::MentorBitLIS3DH(){
 /*
     Esta función inicializa el acelerometro para su posterior uso
 */
-bool MentorBitLIS3DH::begin(uint8_t i2c_addr = 0x68){
+bool MentorBitLIS3DH::begin(uint8_t i2c_addr = 0x19){
     Wire.begin();
     _i2c_addr = i2c_addr;
-    _sensor.initialize();
+    _sensor.begin(_i2c_addr);
 }
 
 /*
     Esta funcion devuelve por referencia el valor de las aceleraciones medidas por el sensor
 */
-void MentorBitLIS3DH::obtenerAceleraciones(int x_value, int y_value, int z_value){
-    _sensor.getAcceleration(&x_value, &y_value, &z_value);
+void MentorBitLIS3DH::obtenerAceleraciones(float &x_value, float &y_value, float &z_value){
+    sensors_event_t event;
+    _sensor.getEvent(&event);
+    x_value = event.acceleration.x;
+    y_value = event.acceleration.y;
+    z_value = event.acceleration.z;
 }
 
 /*
     Esta función devuelve el valor de la aceleración en el eje X
 */
-int MentorBitLIS3DH::obtenerAceleracionX(){
-    int x_value;
-    int y_value;
-    int z_value;
-    _sensor.getAcceleration(&x_value, &y_value, &z_value);
+float MentorBitLIS3DH::obtenerAceleracionX(){
+    sensors_event_t event;
+    _sensor.getEvent(&event);
+    float x_value = event.acceleration.x;
     return x_value;
 }
 
 /*
     Esta función devuelve el valor de la aceleracion en el eje Y
 */
-int MentorBitLIS3DH::obtenerAceleracionY(){
-    int x_value;
-    int y_value;
-    int z_value;
-    _sensor.getAcceleration(&x_value, &y_value, &z_value);
+float MentorBitLIS3DH::obtenerAceleracionY(){
+    sensors_event_t event;
+    _sensor.getEvent(&event);
+    float y_value = event.acceleration.y;
     return y_value;
 }
 
 /*
     Esta funcion devuelve el valor de la aceleracion en el eje Z
 */
-int MentorBitLIS3DH::obtenerAceleracionZ(){
-    int x_value;
-    int y_value;
-    int z_value;
-    _sensor.getAcceleration(&x_value, &y_value, &z_value);
+float MentorBitLIS3DH::obtenerAceleracionZ(){
+    sensors_event_t event;
+    _sensor.getEvent(&event);
+    float z_value = event.acceleration.z;
     return z_value;
 }
 

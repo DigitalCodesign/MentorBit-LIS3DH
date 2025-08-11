@@ -40,26 +40,25 @@
 #include <arduino.h>
 #include <MentorPort.h>
 #include <Wire.h>
-#include <MPU6050.h>
-#include <I2Cdev.h>
+#include <Adafruit_LIS3DH.h>
 
 class MentorBitLIS3DH : public MentorPort
 {
     public: 
 
         MentorBitLIS3DH();
-        bool begin(uint8_t i2c_addr = 0x68);
-        void obtenerAceleraciones(int x_value, int y_value, int z_value);
-        int obtenerAceleracionX();
-        int obtenerAceleracionY();
-        int obtenerAceleracionZ();
+        bool begin(uint8_t i2c_addr = 0x19);
+        void obtenerAceleraciones(float &x_value, float &y_value, float &z_value);
+        float obtenerAceleracionX();
+        float obtenerAceleracionY();
+        float obtenerAceleracionZ();
         void configPort(const Port& port) override;
 
     private:
 
         Port _port;
         uint8_t _i2c_addr;
-        MPU6050 _sensor;
+        Adafruit_LIS3DH _sensor = Adafruit_LIS3DH();
 
 };
 
