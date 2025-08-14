@@ -4,7 +4,7 @@ Esta librería está diseñada para que puedas **medir aceleración, detectar mo
 
 Si estás empezando en el mundo de la electrónica, ¡no te preocupes! MentorBit está pensado para que aprender sea fácil y divertido. Esta placa ya incluye un montón de componentes (LEDs, pulsadores, pantallas, etc.) y utiliza conectores especiales (JST) para que puedas añadir nuevos sensores y módulos sin tener que pelearte con un montón de cables. Pásate por nuestra web para saber más de MentorBit y nuestros productos [pinchando aquí](https://digitalcodesign.com/).
 
-![Render del Módulo MentorBit de Acelerómetro.](https://github.com/DigitalCodesign/MentorBit-LIS3DH/blob/main/assets/accelerometer_module.png)
+![Render del Módulo MentorBit de Acelerómetro.](https://github.com/DigitalCodesign/MentorBit-LIS3DH/blob/main/assets/Accelerometer_Module.png)
 
 Con esta librería, podrás darles a tus proyectos la capacidad de sentir el movimiento y la orientación en el espacio, abriendo un mundo de posibilidades interactivas.
 
